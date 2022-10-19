@@ -11,6 +11,7 @@ pipeline {
     }
     post{
         always{
+            from: "ranveersingh1703@gmail.com"
             mail to: "ranveersingh7600454082@gmail.com",
             subject: "Test Email",
             body: "Test"
