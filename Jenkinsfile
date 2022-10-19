@@ -5,7 +5,7 @@ pipeline {
         stage ('Build') {
             steps {
                 powershell 'javac test.java'
-                powershell 'java .test' 
+                powershell 'test' 
             }
         }
     }
