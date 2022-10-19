@@ -5,7 +5,7 @@ pipeline {
         stage ('Build') {
             steps {
                 bat 'javac test.java'
-                bat 'test'
+                bat 'test.java'
             }
         }
     }
