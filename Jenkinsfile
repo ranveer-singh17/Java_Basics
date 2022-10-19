@@ -9,4 +9,11 @@ pipeline {
             }
         }
     }
+    post{
+        always{
+            mail to: "ranveersingh7600454082@gmail.com",
+            subject: "Test Email",
+            body: "Test"
+        }
+    }
 }
