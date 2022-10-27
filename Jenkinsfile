@@ -26,14 +26,17 @@ pipeline {
                 parallel Unit_Testing:{
                     bat'echo running unit test cases'
                 }, Code_analysis:{
-                    bat 'echo running code analysis'
+                def mvn = tool 'mvn';
+                withSonarQubeEnv() {
+            bat '${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=Demo_1'
+    }
+  }
+}
                     },
                     failFast:true
 
                 }
             }
-        }
-    }
     post{
         always{
             mail to: "ranveersingh7600454082@gmail.com",
