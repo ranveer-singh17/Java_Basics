@@ -28,7 +28,7 @@ pipeline {
                 }, Code_analysis:{
                 def mvn = tool 'mvn';
                 withSonarQubeEnv() {
-            bat '${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=Demo_1'
+            bat '${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=Java_jenkins'
     }
   }
 }
