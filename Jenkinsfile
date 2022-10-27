@@ -23,18 +23,19 @@ pipeline {
         }
         stage('Testing'){
             steps{
-                parallel Unit_Testing:{
-                    bat'echo running unit test cases'
-                }, Code_analysis:{
+                bat'echo running unit test cases'
+            }
+        }
+        stage('Code_analysis'){
+            steps{
                 def mvn = tool 'mvn';
                 withSonarQubeEnv() {
             bat '${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=Java_jenkins'
-    }
-  }
-                    },
-                    failFast:true
-
                 }
+            }
+  }
+
+                
             }
     post{
         always{
