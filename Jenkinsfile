@@ -31,7 +31,6 @@ pipeline {
             bat '${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=Java_jenkins'
     }
   }
-}
                     },
                     failFast:true
 
@@ -43,6 +42,7 @@ pipeline {
             subject: "Test Email",
             body: "Test"
         }
-    }
+}
+}
 
 
