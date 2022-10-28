@@ -30,7 +30,6 @@ pipeline {
             steps{
                 withSonarQubeEnv('SonarQube') {
                     bat 'mvn clean package sonar:sonar'
-            
                 }
             }
   }
