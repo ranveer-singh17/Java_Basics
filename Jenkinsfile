@@ -28,7 +28,6 @@ pipeline {
         }
         stage('Code_analysis'){
             steps{
-                def mvn = tool 'mvn';
                 withSonarQubeEnv('SonarQube') {
                     bat 'mvn clean package sonar:sonar'
             
