@@ -29,8 +29,9 @@ pipeline {
         stage('Code_analysis'){
             steps{
                 def mvn = tool 'mvn';
-                withSonarQubeEnv() {
-            bat '${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=Java_jenkins'
+                withSonarQubeEnv('SonarQube') {
+                    bat 'mvn clean package sonar:sonar'
+            
                 }
             }
   }
